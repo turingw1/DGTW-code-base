@@ -1,0 +1,4 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e5_warp_identity

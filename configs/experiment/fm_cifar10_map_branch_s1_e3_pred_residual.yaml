@@ -1,0 +1,8 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e1_ctm_ema.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e3_pred_residual
+
+model:
+  prediction_type: residual
+  residual_scale_by_delta: true

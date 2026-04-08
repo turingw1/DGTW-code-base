@@ -1,0 +1,41 @@
+base: configs/base.yaml
+includes:
+  - dataset/imagenet64
+  - model/unet_fm
+  - path/ot
+  - scheduler/polynomial
+  - teacher/none
+  - eval/baseline
+
+experiment:
+  name: fm_imagenet64_baseline_smoke
+
+model:
+  hidden_channels: 192
+  num_res_blocks: 3
+  attention_resolutions: [8, 16, 32]
+  channel_mult: [1, 2, 3, 4]
+  num_head_channels: 64
+  resblock_updown: true
+  num_classes: 1000
+
+train:
+  batch_size: 16
+  num_workers: 4
+  persistent_workers: true
+  prefetch_factor: 2
+  epochs: 2
+  max_train_batches: 64
+  max_val_batches: 8
+
+eval:
+  step_counts: [4, 8, 16, 32]
+  num_fid_samples: 1000
+  fid_batch_size: 32
+  sample_batch_size: 8
+  fixed_grid_batch_size: 4
+  official_reference_npz: ${IMAGENET64_REFERENCE_NPZ:-}
+  official_metrics: [fid, is, precision, recall]
+  official_num_samples: 50000
+  official_export_batch_size: 32
+  official_metric_batch_size: 32

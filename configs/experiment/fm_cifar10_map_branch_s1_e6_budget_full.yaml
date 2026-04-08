@@ -1,0 +1,21 @@
+base: configs/experiment/fm_cifar10_map_branch.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e6_budget_full
+
+target:
+  target_construction: ctm_consistency
+  target_source: ema_model
+  target_stop_grad: true
+  bridge_source: ema_model_rollout
+  bridge_steps: 1
+  bridge_stop_grad: true
+
+loss:
+  endpoint_weight: 0.0
+  timewarp_weight: 0.0
+
+eval:
+  step_counts: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+  sample_batch_size: 16
+  fixed_grid_batch_size: 8

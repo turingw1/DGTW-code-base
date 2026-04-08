@@ -1,0 +1,10 @@
+scheduler:
+  name: condot
+  timewarp:
+    enabled: false
+    type: learnable_monotone
+    num_bins: 64
+    init_bias: 0.0
+    logits: null
+    lr: 1.0e-3
+    weight_decay: 0.0

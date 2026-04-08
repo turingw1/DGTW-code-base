@@ -1,0 +1,15 @@
+eval:
+  metrics: [fid]
+  fid_protocol: torch_fidelity_inceptionv3_2048
+  step_counts: [1, 2, 4, 8, 16]
+  num_fid_samples: 50000
+  fid_batch_size: 256
+  sample_batch_size: 64
+  reference_split: test
+  reference_num_samples: 0
+  fixed_seed: 42
+  fixed_grid_size: 64
+  fixed_grid_batch_size: 16
+  grid_nrow: 8
+  dump_image_count: 64
+  solver_method: map_rollout

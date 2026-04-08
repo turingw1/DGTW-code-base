@@ -1,0 +1,10 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_smoke_base.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e1_traj_reg
+
+target:
+  target_construction: trajectory_regression
+  target_source: teacher
+  target_stop_grad: true
+  bridge_source: teacher

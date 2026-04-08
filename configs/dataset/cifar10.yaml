@@ -1,0 +1,9 @@
+dataset:
+  name: cifar10
+  type: image
+  data_root: ${DATA_ROOT}/cifar10
+  image_size: 32
+  channels: 3
+  num_classes: 10
+  train_split: train
+  val_split: test

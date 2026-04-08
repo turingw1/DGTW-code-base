@@ -1,0 +1,19 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_smoke_base.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e5_warp_spline
+
+scheduler:
+  timewarp:
+    enabled: true
+    type: spline_mass
+    num_bins: 64
+    init_bias: 0.0
+
+loss:
+  timewarp_weight: 1.0
+  timewarp_update_every: 1
+  timewarp_defect_steps: 4
+  timewarp_batch_size: 8
+  timewarp_defect_weight: 1.0
+  timewarp_balance_weight: 0.05

@@ -1,0 +1,10 @@
+dataset:
+  name: imagenet64
+  image_size: 64
+  channels: 3
+  num_classes: 1000
+  data_root: ${DATA_ROOT:-/cache/Zhengwei/datasets}/imagenet64
+  raw_ilsvrc_root: ${IMAGENET_RAW_ROOT:-}
+  preprocessed_zip_or_folder: ${IMAGENET64_PREPROCESSED:-}
+  train_split: train
+  val_split: val

@@ -1,0 +1,11 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e4_aux_endpoint_on
+
+loss:
+  endpoint_weight: 0.1
+  endpoint_every: 32
+  endpoint_batch_size: 8
+  endpoint_steps: [4]
+  endpoint_step_weights: [1.0]

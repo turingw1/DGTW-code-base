@@ -1,0 +1,9 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s2_defect_eval
+
+eval:
+  defect_num_samples: 4096
+  defect_grid_steps: 16
+  defect_triplets: ${DEFECT_TRIPLETS_JSON:-}

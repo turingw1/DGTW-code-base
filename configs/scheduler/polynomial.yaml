@@ -1,0 +1,3 @@
+scheduler:
+  name: polynomial
+  exponent: 3.0

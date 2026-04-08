@@ -1,0 +1,28 @@
+model:
+  family: official_map_unet
+  hidden_channels: 128
+  num_res_blocks: 4
+  attention_resolutions: [2]
+  dropout: 0.3
+  channel_mult: [2, 2, 2]
+  conv_resample: false
+  dims: 2
+  num_classes: null
+  use_checkpoint: false
+  num_heads: 1
+  num_head_channels: -1
+  num_heads_upsample: -1
+  use_scale_shift_norm: true
+  resblock_updown: false
+  use_new_attention_order: true
+  with_fourier_features: false
+  map_conditioning_channels: 2
+  prediction_type: residual
+  residual_scale_by_delta: true
+  residual_tanh_scale: 1.0
+  use_preconditioning: true
+  sigma_data: 0.5
+  sigma_min: 1.0e-3
+  time_embed_mode: log_noise
+  inner_parametrization: edm
+  outer_parametrization: euler

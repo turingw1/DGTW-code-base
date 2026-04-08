@@ -1,0 +1,21 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e5_warp_learned
+
+scheduler:
+  timewarp:
+    enabled: true
+    type: learnable_monotone
+    num_bins: 64
+    init_bias: 0.0
+    lr: 1.0e-3
+    weight_decay: 0.0
+
+loss:
+  timewarp_weight: 1.0
+  timewarp_update_every: 1
+  timewarp_defect_steps: 4
+  timewarp_batch_size: 8
+  timewarp_defect_weight: 1.0
+  timewarp_balance_weight: 0.05

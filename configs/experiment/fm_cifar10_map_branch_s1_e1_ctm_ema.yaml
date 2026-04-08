@@ -1,0 +1,4 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_smoke_base.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e1_ctm_ema

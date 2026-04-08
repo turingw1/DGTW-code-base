@@ -1,0 +1,11 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s2_official_metrics
+
+eval:
+  official_reference_npz: ${OFFICIAL_REFERENCE_NPZ:-}
+  official_metrics: [fid, is, precision, recall]
+  official_num_samples: 50000
+  official_export_batch_size: 64
+  official_metric_batch_size: 64

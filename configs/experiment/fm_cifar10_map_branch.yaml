@@ -1,0 +1,24 @@
+base: configs/base.yaml
+includes:
+  - dataset/cifar10
+  - model/map_unet
+  - path/condot
+  - scheduler/condot
+  - scheduler/timewarp_hook
+  - target/teacher_sampler_online
+  - teacher/sampler
+  - loss/map_ctm_like
+  - eval/map_branch
+
+experiment:
+  name: fm_cifar10_map_branch
+
+runtime:
+  cudnn_benchmark: true
+
+train:
+  objective: explicit_map
+  batch_size: 128
+  num_workers: 8
+  persistent_workers: true
+  prefetch_factor: 4

@@ -1,0 +1,20 @@
+name: dgfm_map_public
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - PyYAML==6.0.3
+      - numpy==2.2.3
+      - scipy==1.15.3
+      - torch-fidelity==0.4.0
+      - diffusers>=0.30
+      - transformers>=4.40
+      - accelerate>=0.30
+      - safetensors>=0.4
+      - piq>=0.8
+      - matplotlib
+      - pillow
+      - pytest
+      - -e .

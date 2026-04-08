@@ -1,0 +1,18 @@
+target:
+  builder: teacher_sampler
+  sampling_mode: ctm_discrete
+  start_scales: 33
+  target_construction: ctm_consistency
+  target_source: ema_model
+  target_stop_grad: true
+  bridge_source: ema_model_rollout
+  bridge_steps: 1
+  bridge_stop_grad: true
+  loss_type: mse
+  huber_delta: 0.1
+  teacher_sampler_sub_batch: 64
+  num_heun_step: 17
+  num_heun_step_random: true
+  heun_step_strategy: weighted
+  heun_step_multiplier: 1.0
+  sample_s_strategy: uniform

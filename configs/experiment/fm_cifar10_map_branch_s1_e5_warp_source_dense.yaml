@@ -1,0 +1,9 @@
+base: configs/experiment/fm_cifar10_map_branch_s1_e3_pred_residual.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_e5_warp_source_dense
+
+scheduler:
+  timewarp:
+    enabled: true
+    type: source_dense_power@2.0

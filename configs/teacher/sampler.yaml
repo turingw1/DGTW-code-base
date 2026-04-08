@@ -1,0 +1,15 @@
+teacher:
+  type: sampler
+  backend: diffusers_ddpm
+  name_or_path: google/ddpm-cifar10-32
+  target_type: trajectory
+  local_files_only: true
+  solver: ddim
+  num_inference_steps: 128
+  retain_num_points: 33
+  x0_std: 1.0
+  store_dtype: float16
+  shard_size: 1024
+  train_num_samples: 50000
+  val_num_samples: 10000
+  seed: 42

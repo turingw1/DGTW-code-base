@@ -1,0 +1,40 @@
+base: configs/experiment/fm_cifar10_map_branch.yaml
+
+experiment:
+  name: fm_cifar10_map_branch_s1_smoke_base
+
+teacher:
+  num_inference_steps: 16
+
+target:
+  start_scales: 12
+  teacher_sampler_sub_batch: 32
+  num_heun_step: 4
+  num_heun_step_random: false
+  heun_step_strategy: uniform
+  target_construction: ctm_consistency
+  target_source: ema_model
+  target_stop_grad: true
+  bridge_source: ema_model_rollout
+  bridge_steps: 1
+  bridge_stop_grad: true
+
+loss:
+  endpoint_weight: 0.0
+  timewarp_weight: 0.0
+
+train:
+  batch_size: 32
+  num_workers: 4
+  persistent_workers: true
+  prefetch_factor: 2
+  epochs: 8
+  max_train_batches: 128
+  max_val_batches: 16
+
+eval:
+  step_counts: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+  num_fid_samples: 1000
+  fid_batch_size: 64
+  sample_batch_size: 16
+  fixed_grid_batch_size: 8
