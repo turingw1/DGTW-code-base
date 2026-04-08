@@ -9,6 +9,7 @@ experiments recorded in:
 The stable operational procedure lives in:
 
 - [docs/experiments/map_branch/A100_PIPELINE.md](docs/experiments/map_branch/A100_PIPELINE.md)
+- [docs/README.md](docs/README.md)
 
 Public scope:
 
